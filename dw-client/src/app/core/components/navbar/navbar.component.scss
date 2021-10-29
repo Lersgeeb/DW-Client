@@ -1,3 +1,5 @@
+@import 'variables';
+
 :host{
     display: block;
 }
@@ -12,7 +14,8 @@
     padding: 1em 0em;
     border-top: 2px #E5E5E5 solid;
     
-    app-navbar-item{
-        
+    fa-icon{
+        color: $dark-main-color;
+        font-size: 1.8em;
     }
 }

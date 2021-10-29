@@ -1,6 +1,6 @@
 <div class="navbar">
-    <app-navbar-item iconName="principal"></app-navbar-item>
-    <app-navbar-item  iconName="home"></app-navbar-item>
+    <app-navbar-item  iconName="principal"></app-navbar-item>
+    <app-navbar-item [isActive]="homeActive" iconName="home"></app-navbar-item>
     <ng-template *ngIf="userIsAuth; then userAuth else userNotAuth">
         <app-navbar-item iconName="cart"></app-navbar-item>
         <app-navbar-item iconName="logout"></app-navbar-item>

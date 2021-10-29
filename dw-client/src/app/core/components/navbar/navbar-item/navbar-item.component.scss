@@ -1,10 +1,18 @@
+@import 'variables';
+
 :host{
     display: block;
 }
 
 .navbar-item{
-    .no-svg .logo {
-        width: 200px;
-        height: 164px;
-      }
+    
+    svg{
+        fill: $dark-main-color;
+    }
+}
+
+.navbar-item.active{
+    svg{
+        fill: $main-color;
+    }
 }

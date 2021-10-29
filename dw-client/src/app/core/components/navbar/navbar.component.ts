@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -11,7 +9,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent implements OnInit {
   userIsAuth = true;
   homeActive = false;
-  faCoffee = faCoffee;
+
   
 
   constructor(private router: Router) { }

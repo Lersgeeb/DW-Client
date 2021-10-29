@@ -8,14 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavbarItemComponent implements OnInit {
 
   @Input() iconName = ''; 
-  srcUrl = "";  
-  
-  
-  constructor() { 
-  }
+  @Input() isActive = false; 
 
-  ngOnInit(): void {
-    this.srcUrl = `../../../../assets/icons/navbar/${this.iconName}.svg`; 
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
 
 }

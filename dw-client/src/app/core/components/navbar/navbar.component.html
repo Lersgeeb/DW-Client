@@ -1,0 +1,19 @@
+<div class="navbar">
+    <app-navbar-item iconName="principal"></app-navbar-item>
+    <app-navbar-item  iconName="home"></app-navbar-item>
+    <ng-template *ngIf="userIsAuth; then userAuth else userNotAuth">
+        <app-navbar-item iconName="cart"></app-navbar-item>
+        <app-navbar-item iconName="logout"></app-navbar-item>
+    </ng-template>
+</div>
+
+<ng-template #userAuth>
+    <app-navbar-item iconName="cart"></app-navbar-item>
+    <app-navbar-item iconName="logout"></app-navbar-item>
+</ng-template>
+
+<ng-template #userNotAuth>
+    <app-navbar-item iconName="user"></app-navbar-item>
+</ng-template>
+
+

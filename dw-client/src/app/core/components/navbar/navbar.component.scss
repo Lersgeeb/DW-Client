@@ -1,0 +1,18 @@
+:host{
+    display: block;
+}
+
+.navbar{
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    padding: 1em 0em;
+    border-top: 2px #E5E5E5 solid;
+    
+    app-navbar-item{
+        
+    }
+}

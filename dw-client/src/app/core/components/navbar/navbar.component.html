@@ -1,19 +1,16 @@
 <div class="navbar">
-    <app-navbar-item  iconName="principal"></app-navbar-item>
-    <app-navbar-item [isActive]="homeActive" iconName="home"></app-navbar-item>
-    <ng-template *ngIf="userIsAuth; then userAuth else userNotAuth">
-        <app-navbar-item iconName="cart"></app-navbar-item>
-        <app-navbar-item iconName="logout"></app-navbar-item>
-    </ng-template>
+    <app-navbar-item routerLink="/categories" [isActive]="navStatus.categoriesActive" iconName="principal"></app-navbar-item>
+    <app-navbar-item routerLink="/" [isActive]="navStatus.homeActive" iconName="home"></app-navbar-item>
+    <ng-template *ngIf="userIsAuth; then userAuth else userNotAuth"></ng-template>
 </div>
 
 <ng-template #userAuth>
-    <app-navbar-item iconName="cart"></app-navbar-item>
+    <app-navbar-item routerLink="/cart" [isActive]="navStatus.cartActive" iconName="cart"></app-navbar-item>
     <app-navbar-item iconName="logout"></app-navbar-item>
 </ng-template>
 
 <ng-template #userNotAuth>
-    <app-navbar-item iconName="user"></app-navbar-item>
+    <app-navbar-item routerLink="/access" [isActive]="navStatus.accessActive" iconName="user"></app-navbar-item>
 </ng-template>
 
 

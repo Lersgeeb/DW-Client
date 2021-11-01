@@ -16,6 +16,7 @@ import { BusinessComponent } from './core/views/business/business.component';
 import { BusinessProductsComponent } from './core/views/business-products/business-products.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
+import { PopularBusinessComponent } from './core/components/popular-business/popular-business.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './core/components/footer/footer.component';
     BusinessComponent,
     BusinessProductsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PopularBusinessComponent
   ],
   imports: [
     BrowserModule,

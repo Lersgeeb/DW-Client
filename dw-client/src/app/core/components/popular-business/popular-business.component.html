@@ -1,0 +1,14 @@
+<div class="popular-business">
+    <p>¡NEGOCIOS EN AUGE!</p>
+    <div class="business" *ngFor="let busi of business">
+        <img [src]="busi.logo" alt="">
+        <img [src]="busi.img" alt="" id="bus-img">
+        <div [ngClass]="{
+            'pizza': busi.name === 'PIZZA HUT',
+            'burger': busi.name === 'BURGER KING',
+            'popeye': busi.name === 'POPEYES'
+        }">
+           {{ busi.name }} 
+        </div>
+    </div>
+</div>

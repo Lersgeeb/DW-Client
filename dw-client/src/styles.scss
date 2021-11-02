@@ -1,7 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'normalize';
+@import 'variables';
 @import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300;400;500;700;800&display=swap');
 
 *{
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+.title{
     font-family: 'Ramabhadra', sans-serif;
+    color: $dark-main-color;
+}
+
+.line{
+    background-color: $dark-main-color;
+    height: 3px;
+    width: 60%;
+    margin: auto;
+    margin-top: 6px;
 }

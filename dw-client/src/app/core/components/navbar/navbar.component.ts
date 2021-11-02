@@ -7,7 +7,7 @@ import {Router, NavigationEnd} from '@angular/router'
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  userIsAuth = true;
+  userIsAuth = false;
 
   templateStatus = {
     homeActive:false,

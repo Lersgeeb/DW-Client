@@ -52,4 +52,12 @@
             font-size: 28px;
         }
     }
+    .categories-items{
+        margin-bottom: 3em;
+        margin-top: 2em;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2em;
+        row-gap: 2em;
+    }
 }

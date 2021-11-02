@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button'; 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
@@ -17,6 +21,10 @@ import { BusinessProductsComponent } from './core/views/business-products/busine
 import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { PopularBusinessComponent } from './core/components/popular-business/popular-business.component';
+import { CategoryComponent } from './core/components/category/category.component';
+import { StepsComponent } from './core/components/steps/steps.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './core/components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +41,19 @@ import { PopularBusinessComponent } from './core/components/popular-business/pop
     BusinessProductsComponent,
     HeaderComponent,
     FooterComponent,
-    PopularBusinessComponent
+    PopularBusinessComponent,
+    CategoryComponent,
+    StepsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

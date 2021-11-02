@@ -1,52 +1,35 @@
 @import 'variables';
 
 .popular-business{
-    position: relative;
+    margin-bottom: 3em;
     text-align: center  ;
     p{
         color: $main-color;
         font-size: 24px;
         
     }
-
-    .business{
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .pizza{
-        position: absolute;
-        top: 32%;
-        width: 53%;
-        text-align: center;
-        font-size: 24px;
-        color: white;
-        background-color: #0000007a;
-        margin-left: 35%;
-    }
-
-    .burger{
-        position: absolute;
-        top: 61.5%;
-        width: 53%;
-        text-align: center;
-        font-size: 24px;
-        color: white;
-        background-color: #0000007a;
-        margin-left: 35%;
-    }
     
-    .popeye{
+    .business{
+        position: relative;
+        margin-top: 1.5em;
+        
+    }
+
+    .bg-business{
+        padding: 0.3em 0;
         position: absolute;
-        top: 90.6%;
-        width: 53%;
+        left: 0;
+        right: 2px;
+        bottom: 3px;
+        
         text-align: center;
         font-size: 24px;
         color: white;
-        background-color: #0000007a;
-        margin-left: 35%;
+        background-color: #000000af;
+        margin-left: 30%;
     }
 
+    
     #bus-img{
         margin-left: -1px;
     }

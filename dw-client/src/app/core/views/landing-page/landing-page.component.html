@@ -34,8 +34,14 @@
             <div class="title">POPULARES</div>
             <div class="line"></div>
         </div>
+        <div class="categories-items">
+            <app-category  *ngFor="let category of categories" name={{category.name}} icon={{category.icon}}></app-category>            
+        </div>
 
     </div>
-
+    <app-popular-business></app-popular-business>
+    
     
  </div>
+
+ 

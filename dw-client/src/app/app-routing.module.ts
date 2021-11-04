@@ -4,6 +4,8 @@ import { LandingPageComponent } from './core/views/landing-page/landing-page.com
 import { CategoriesComponent } from './core/views/categories/categories.component';
 import { CartComponent } from './core/views/cart/cart.component';
 import {UserAccessComponent } from './core/views/user-access/user-access.component';
+import { SignupComponent } from './core/components/signup/signup.component';
+import { LoginComponent } from './core/components/login/login.component';
 
 const routes: Routes = [
   {
@@ -20,7 +22,17 @@ const routes: Routes = [
   },
   {
     path: 'access',
-    component: UserAccessComponent
+    component: UserAccessComponent,
+    children: [
+      {
+        path: 'signup',
+        component: SignupComponent
+      },
+      {
+      path: 'login',
+      component: LoginComponent
+      }
+    ]
   }
 ];
 

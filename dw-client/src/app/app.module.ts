@@ -25,6 +25,7 @@ import { CategoryComponent } from './core/components/category/category.component
 import { StepsComponent } from './core/components/steps/steps.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './core/components/login/login.component';
+import { SignupComponent } from './core/components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LoginComponent } from './core/components/login/login.component';
     PopularBusinessComponent,
     CategoryComponent,
     StepsComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

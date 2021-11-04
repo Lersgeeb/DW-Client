@@ -10,18 +10,18 @@ export class PopularBusinessComponent implements OnInit {
   business = [
     {
       name: 'PIZZA HUT',
-      logo: '../../../../assets/icons/landingpage/pizza-hut-logo.svg',
-      img: '../../../../assets/icons/landingpage/pizza-hut.svg'
+      logo: 'assets/images/landingPage/pizza-hut-logo.png',
+      img: '../../../../assets/images/landingPage/pizza-hut.png'
     },
     {
       name: 'BURGER KING',
-      logo: '../../../../assets/icons/landingpage/burger-king-logo.svg',
-      img: '../../../../assets/icons/landingpage/burger-king.svg'
+      logo: '../../../../assets/images/landingPage/burger-king-logo.png',
+      img: '../../../../assets/images/landingPage/burger-king.png'
     },
     {
       name: 'POPEYES',
-      logo: '../../../../assets/icons/landingpage/logo-popeyes.svg',
-      img: '../../../../assets/icons/landingpage/popeyes.svg'
+      logo: '../../../../assets/images/landingPage/popeyes-logo.png',
+      img: '../../../../assets/images/landingPage/popeyes.png'
     }
   ]
 

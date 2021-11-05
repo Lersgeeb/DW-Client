@@ -1,0 +1,39 @@
+@import 'variables';
+
+:host{
+    display: block;
+}
+
+.business-container{
+
+    margin-top: 1.5em;
+
+    .bg-blue{
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        padding-left: 1em ;
+        
+        padding-top: 0.5em;
+        padding-bottom: 0.7em;
+        width: 100%;
+        color: white;
+        font-size: 2em;
+        font-weight: 600;
+        text-align: center;
+        background-color:$main-color;
+        img{
+            width: 1.5em;
+            margin-right: 0.6em;
+            filter: brightness(10);
+        }
+    }
+    
+    .business-options-container{
+        app-business-option{
+            margin-top: 1em;
+        }
+    }
+}

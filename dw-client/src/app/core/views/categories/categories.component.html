@@ -6,7 +6,7 @@
             <div class="line"></div>
         </div>
         <div class="categories-item">
-            <app-category  class="cat-item" *ngFor="let category of categories" name={{category.name}} icon={{category.icon}}></app-category>            
+            <app-category   routerLink={{newRoute}} class="cat-item" *ngFor="let category of categories" name={{category.name}} icon={{category.icon}}></app-category>            
         </div>
 
     </div>

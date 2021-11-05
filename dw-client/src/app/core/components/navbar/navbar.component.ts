@@ -37,20 +37,15 @@ export class NavbarComponent implements OnInit {
   setActiveIcon(): void{
     console.log(this.router.url)  
     this.navStatus = Object.create(this.templateStatus);
-    switch(this.router.url){
-      case '/':
-        this.navStatus.homeActive = true;  
-        break;
-      case '/categories':
-        this.navStatus.categoriesActive = true;  
-        break;
-      case '/cart':
-        this.navStatus.cartActive = true;  
-        break;
-      case '/access':
-        this.navStatus.accessActive = true;  
-        break;
-    }
+    let route = this.router.url;
+    if(route == "/")
+      this.navStatus.homeActive = true;  
+    else if(route.includes('/categories'))
+      this.navStatus.categoriesActive = true;  
+    else if(route.includes('/cart'))
+      this.navStatus.cartActive = true; 
+    else if(route.includes('/access'))
+      this.navStatus.accessActive = true;   
   }
 
   

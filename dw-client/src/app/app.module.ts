@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button'; 
+import {MatTableModule} from '@angular/material/table'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,10 @@ import { LoginComponent } from './core/components/login/login.component';
 import { SignupComponent } from './core/components/signup/signup.component';
 import { BusinessOptionComponent } from './core/components/business-option/business-option.component';
 import { BackButtonComponent } from './core/components/back-button/back-button.component';
+import { OrdersComponent } from './core/components/orders/orders.component';
+import { faAngular } from '@fortawesome/free-brands-svg-icons';
+
+
 
 @NgModule({
   declarations: [
@@ -50,7 +55,8 @@ import { BackButtonComponent } from './core/components/back-button/back-button.c
     LoginComponent,
     SignupComponent,
     BusinessOptionComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +65,8 @@ import { BackButtonComponent } from './core/components/back-button/back-button.c
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

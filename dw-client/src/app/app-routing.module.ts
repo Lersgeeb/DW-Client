@@ -7,6 +7,7 @@ import {UserAccessComponent } from './core/views/user-access/user-access.compone
 import {BusinessComponent } from './core/views/business/business.component';
 import { SignupComponent } from './core/components/signup/signup.component';
 import { LoginComponent } from './core/components/login/login.component';
+import { OrdersComponent } from './core/components/orders/orders.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,13 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    component: CartComponent
+    component: CartComponent,
+    children: [
+      {
+        path:'orders',
+        component: OrdersComponent
+      }
+    ]
   },
   {
     path: 'access',
@@ -43,7 +50,8 @@ const routes: Routes = [
       component: LoginComponent
       }
     ]
-  }
+  },
+  
 ];
 
 @NgModule({

@@ -1,1 +1,8 @@
-<h1>This is de Cart view</h1>
+<div class="view-pad">
+    <app-header></app-header>
+    <div class="btns-access">
+        <button class="btn-access" routerLink="/cart/order" type="button" mat-button color="primary">Orden</button>
+        <button class="btn-access" routerLink="/cart/orders" type="button" mat-button color="primary">Mis ordenes</button>
+    </div>
+    <router-outlet></router-outlet>
+</div>

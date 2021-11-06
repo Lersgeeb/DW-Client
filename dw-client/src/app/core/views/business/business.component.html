@@ -1,10 +1,12 @@
-<app-header></app-header>
-<div class="business-container">
+<div class="view-pad business-cat-header">
+    <app-header></app-header>
     <app-back-button route='/categories' text="Categorías" ></app-back-button>
-    <div class="bg-blue">
-        <img src="assets/icons/categories/restaurant.svg" alt="">
-        {{currentCategoryBusiness.name}}
-    </div>
+</div>
+<div class="bg-blue">
+    <img src="assets/icons/categories/restaurant.svg" alt="">
+    {{currentCategoryBusiness.name}}
+</div>
+<div class="view-pad business-container">
     <div class="business-options-container">
         <app-business-option *ngFor="let business of restaurants" resource={{business.resource}} name={{business.name}}></app-business-option>
     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -42,10 +43,14 @@ export class CategoriesComponent implements OnInit {
 
   ]
 
+  newRoute = '';
 
-  constructor() { }
+  constructor(
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
+    this.newRoute = `${this.route.url}/business/1`;
   }
 
 }

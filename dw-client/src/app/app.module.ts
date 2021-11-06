@@ -26,6 +26,8 @@ import { StepsComponent } from './core/components/steps/steps.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './core/components/login/login.component';
 import { SignupComponent } from './core/components/signup/signup.component';
+import { BusinessOptionComponent } from './core/components/business-option/business-option.component';
+import { BackButtonComponent } from './core/components/back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { SignupComponent } from './core/components/signup/signup.component';
     CategoryComponent,
     StepsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    BusinessOptionComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule,

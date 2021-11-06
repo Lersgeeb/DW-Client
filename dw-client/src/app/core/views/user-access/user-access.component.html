@@ -1,8 +1,10 @@
-<app-header></app-header>
+<div class="view-pad">
+    <app-header></app-header>
+    
+    <div class="btns-access">
+        <button class="btn-access" routerLink="/access/login" type="button" mat-button color="primary">Login</button>
+        <button class="btn-access" routerLink="/access/signup" type="button" mat-button color="primary">Signup</button>
+    </div>
 
-<div class="btns-access">
-    <button class="btn-access" routerLink="/access/login" type="button" mat-button color="primary">Login</button>
-    <button class="btn-access" routerLink="/access/signup" type="button" mat-button color="primary">Signup</button>
+    <router-outlet></router-outlet>
 </div>
-
-<router-outlet></router-outlet>

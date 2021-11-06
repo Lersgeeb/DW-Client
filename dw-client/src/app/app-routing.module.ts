@@ -4,6 +4,7 @@ import { LandingPageComponent } from './core/views/landing-page/landing-page.com
 import { CategoriesComponent } from './core/views/categories/categories.component';
 import { CartComponent } from './core/views/cart/cart.component';
 import {UserAccessComponent } from './core/views/user-access/user-access.component';
+import {BusinessComponent } from './core/views/business/business.component';
 import { SignupComponent } from './core/components/signup/signup.component';
 import { LoginComponent } from './core/components/login/login.component';
 
@@ -14,7 +15,16 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CategoriesComponent
+    children: [
+      {
+        path: '',
+        component: CategoriesComponent
+      },
+      {
+        path: 'business/:id',
+        component: BusinessComponent
+      },
+    ]
   },
   {
     path: 'cart',

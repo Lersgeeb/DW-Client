@@ -8,6 +8,8 @@ import {BusinessComponent } from './core/views/business/business.component';
 import { SignupComponent } from './core/components/signup/signup.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { OrdersComponent } from './core/components/orders/orders.component';
+import { OrderComponent } from './core/components/order/order.component';
+import { CommercialInvoiceComponent } from './core/views/commercial-invoice/commercial-invoice.component';
 
 const routes: Routes = [
   {
@@ -34,6 +36,14 @@ const routes: Routes = [
       {
         path:'orders',
         component: OrdersComponent
+      },
+      {
+        path: 'order',
+        component: OrderComponent
+      },
+      {
+        path: 'commercial-invoice',
+        component: CommercialInvoiceComponent
       }
     ]
   },

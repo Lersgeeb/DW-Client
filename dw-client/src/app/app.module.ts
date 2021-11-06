@@ -31,6 +31,8 @@ import { BusinessOptionComponent } from './core/components/business-option/busin
 import { BackButtonComponent } from './core/components/back-button/back-button.component';
 import { OrdersComponent } from './core/components/orders/orders.component';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
+import { OrderComponent } from './core/components/order/order.component';
+import { InvoiceComponent } from './core/components/invoice/invoice.component';
 
 
 
@@ -56,7 +58,9 @@ import { faAngular } from '@fortawesome/free-brands-svg-icons';
     SignupComponent,
     BusinessOptionComponent,
     BackButtonComponent,
-    OrdersComponent
+    OrdersComponent,
+    OrderComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,

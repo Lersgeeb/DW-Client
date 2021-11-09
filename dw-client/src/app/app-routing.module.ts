@@ -11,6 +11,7 @@ import { OrdersComponent } from './core/components/orders/orders.component';
 import { OrderComponent } from './core/components/order/order.component';
 import { CommercialInvoiceComponent } from './core/views/commercial-invoice/commercial-invoice.component';
 import { InvoiceStateComponent } from './core/views/invoice-state/invoice-state.component';
+import { DataInvoiceComponent } from './core/views/data-invoice/data-invoice.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'state-invoice',
     component: InvoiceStateComponent
+  },
+  {
+    path: 'data-order',
+    component: DataInvoiceComponent
   },
   {
     path: 'access',

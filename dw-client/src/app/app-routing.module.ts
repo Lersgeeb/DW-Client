@@ -10,6 +10,7 @@ import { LoginComponent } from './core/components/login/login.component';
 import { OrdersComponent } from './core/components/orders/orders.component';
 import { OrderComponent } from './core/components/order/order.component';
 import { CommercialInvoiceComponent } from './core/views/commercial-invoice/commercial-invoice.component';
+import { InvoiceStateComponent } from './core/views/invoice-state/invoice-state.component';
 
 const routes: Routes = [
   {
@@ -40,12 +41,16 @@ const routes: Routes = [
       {
         path: 'order',
         component: OrderComponent
-      },
-      {
-        path: 'commercial-invoice',
-        component: CommercialInvoiceComponent
       }
     ]
+  },
+  {
+    path: 'commercial-invoice',
+    component: CommercialInvoiceComponent
+  },
+  {
+    path: 'state-invoice',
+    component: InvoiceStateComponent
   },
   {
     path: 'access',

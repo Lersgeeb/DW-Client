@@ -33,6 +33,7 @@ import { OrdersComponent } from './core/components/orders/orders.component';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
 import { OrderComponent } from './core/components/order/order.component';
 import { InvoiceComponent } from './core/components/invoice/invoice.component';
+import { InvoiceStateComponent } from './core/views/invoice-state/invoice-state.component';
 
 
 
@@ -60,7 +61,8 @@ import { InvoiceComponent } from './core/components/invoice/invoice.component';
     BackButtonComponent,
     OrdersComponent,
     OrderComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    InvoiceStateComponent
   ],
   imports: [
     BrowserModule,

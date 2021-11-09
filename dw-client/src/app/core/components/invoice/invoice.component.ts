@@ -1,17 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface Orders {
-  amount: string;
-  order_name: string;
-  price: number,
-  }
 
-const MY_ORDERS: Orders[] = [
-  {order_name: 'Pizza mixta', amount: 'PIZZA HUT', price: 250},
-  {order_name: 'Pizza mixta', amount: 'BURGER KING', price: 200}
-  
- 
-];
 
 @Component({
   selector: 'app-invoice',
@@ -20,12 +9,46 @@ const MY_ORDERS: Orders[] = [
 })
 export class InvoiceComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'amount', 'price'];
-  dataSource = MY_ORDERS;
+  sub = 0;
+  price=0;
+  isv = 0;
+  admin_commision = 0;
+  delivery_commision = 0;
+  total = 0;
+  orders = [
+    {order_name: 'Pizza mixta', amount: '2', price: 250},
+    {order_name: 'Pizza mixta', amount: '2', price: 200},{order_name: 'Pizza mixta', amount: '2', price: 250}];
+  
+  
 
-  constructor() { }
+  constructor() { 
+  
+    this.subtotal();
+    this.totalInvoice();
+
+  }
 
   ngOnInit(): void {
+    
+  }
+
+
+  subtotal(): void{
+    
+    for(let i=0;i<this.orders.length;i++){
+        this.price = this.orders[i].price;
+        this.sub += this.price;
+        console.log(this.sub);
+        
+        
+    }
+  }
+
+  totalInvoice(): void{
+    this.isv = this.sub*0.15;
+    this.admin_commision = this.sub*0.10;
+    this.delivery_commision = this.sub*0.05;
+    this.total = this.isv + this.admin_commision +this.delivery_commision + this.sub;
   }
 
 }

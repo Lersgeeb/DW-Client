@@ -7,6 +7,7 @@ import {UserAccessComponent } from './core/views/user-access/user-access.compone
 import {BusinessComponent } from './core/views/business/business.component';
 import { SignupComponent } from './core/components/signup/signup.component';
 import { LoginComponent } from './core/components/login/login.component';
+import { BusinessProductsComponent } from './core/views/business-products/business-products.component';
 
 const routes: Routes = [
   {
@@ -21,8 +22,12 @@ const routes: Routes = [
         component: CategoriesComponent
       },
       {
-        path: 'business/:id',
+        path: 'business/:category',
         component: BusinessComponent
+      },
+      {
+        path: 'business-details/:id',
+        component: BusinessProductsComponent
       },
     ]
   },

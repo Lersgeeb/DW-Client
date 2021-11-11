@@ -8,6 +8,6 @@
 </div>
 <div class="view-pad business-container">
     <div class="business-options-container">
-        <app-business-option *ngFor="let business of restaurants" resource={{business.resource}} name={{business.name}}></app-business-option>
+        <app-business-option routerLink='/categories/business-details/1' *ngFor="let business of restaurants" resource={{business.resource}} name={{business.name}}></app-business-option>
     </div>
 </div>

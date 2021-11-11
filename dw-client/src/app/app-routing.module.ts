@@ -12,6 +12,7 @@ import { OrderComponent } from './core/components/order/order.component';
 import { CommercialInvoiceComponent } from './core/views/commercial-invoice/commercial-invoice.component';
 import { InvoiceStateComponent } from './core/views/invoice-state/invoice-state.component';
 import { DataInvoiceComponent } from './core/views/data-invoice/data-invoice.component';
+import { BusinessProductsComponent } from './core/views/business-products/business-products.component';
 
 const routes: Routes = [
   {
@@ -26,8 +27,12 @@ const routes: Routes = [
         component: CategoriesComponent
       },
       {
-        path: 'business/:id',
+        path: 'business/:category',
         component: BusinessComponent
+      },
+      {
+        path: 'business-details/:id',
+        component: BusinessProductsComponent
       },
     ]
   },

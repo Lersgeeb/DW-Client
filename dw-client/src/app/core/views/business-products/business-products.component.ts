@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-business-products',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./business-products.component.scss']
 })
 export class BusinessProductsComponent implements OnInit {
-
+  faPlus = faPlus;
   constructor() { }
 
   ngOnInit(): void {

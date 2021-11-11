@@ -43,7 +43,7 @@ export class BusinessComponent implements OnInit {
   currentCategoryBusiness: CategoryBusiness = this.listCategoryBusiness[0]
 
 
-  categoryId: string | null = null;
+  category: string | null = null;
 
   constructor(
     private route: ActivatedRoute
@@ -51,7 +51,7 @@ export class BusinessComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      this.categoryId = params.get('id');
+      this.category = params.get('category');
     })
   }
 

@@ -39,9 +39,22 @@
         </div>
 
     </div>
-    <app-popular-business></app-popular-business>
-    
     
  </div>
+
+ <div class="steps">
+    <div class="title-trend">
+        <div class="text-title">¡Haz una encargo!</div>
+        <div class="line"></div>
+    </div>
+
+    <div class="steps-list view-pad">
+        <app-process-step *ngFor="let step of steps" [step]="step"></app-process-step>
+    </div>
+</div>
+<div class="view-pad">
+    <app-popular-business></app-popular-business>
+</div>
+
 <app-footer></app-footer>
  

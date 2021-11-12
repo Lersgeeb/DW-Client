@@ -35,6 +35,8 @@ import { OrderComponent } from './core/components/order/order.component';
 import { InvoiceComponent } from './core/components/invoice/invoice.component';
 import { InvoiceStateComponent } from './core/views/invoice-state/invoice-state.component';
 import { OrderCartComponent } from './core/components/order-cart/order-cart.component';
+import { ProcessStepComponent } from './core/components/process-step/process-step.component';
+import { NavLinkComponent } from './core/components/nav-link/nav-link.component';
 
 
 
@@ -64,7 +66,9 @@ import { OrderCartComponent } from './core/components/order-cart/order-cart.comp
     OrderComponent,
     InvoiceComponent,
     InvoiceStateComponent,
-    OrderCartComponent
+    OrderCartComponent,
+    ProcessStepComponent,
+    NavLinkComponent
   ],
   imports: [
     BrowserModule,

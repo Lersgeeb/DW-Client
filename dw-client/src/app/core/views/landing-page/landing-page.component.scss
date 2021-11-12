@@ -61,3 +61,26 @@
         row-gap: 2em;
     }
 }
+
+.steps{
+    background-color: $main-color;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .text-title{
+        margin-top: 1em;
+        font-size: 22px;
+        font-weight: 700;
+        color: white;
+    }
+    .line{
+        margin-top: 1em;
+        background-color: white;
+    }
+
+    app-process-step{
+        margin-bottom: 1em;
+    }
+}

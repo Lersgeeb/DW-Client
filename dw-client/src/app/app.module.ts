@@ -34,6 +34,9 @@ import { faAngular } from '@fortawesome/free-brands-svg-icons';
 import { OrderComponent } from './core/components/order/order.component';
 import { InvoiceComponent } from './core/components/invoice/invoice.component';
 import { InvoiceStateComponent } from './core/views/invoice-state/invoice-state.component';
+import { OrderCartComponent } from './core/components/order-cart/order-cart.component';
+import { ProcessStepComponent } from './core/components/process-step/process-step.component';
+import { NavLinkComponent } from './core/components/nav-link/nav-link.component';
 
 
 
@@ -62,7 +65,10 @@ import { InvoiceStateComponent } from './core/views/invoice-state/invoice-state.
     OrdersComponent,
     OrderComponent,
     InvoiceComponent,
-    InvoiceStateComponent
+    InvoiceStateComponent,
+    OrderCartComponent,
+    ProcessStepComponent,
+    NavLinkComponent
   ],
   imports: [
     BrowserModule,

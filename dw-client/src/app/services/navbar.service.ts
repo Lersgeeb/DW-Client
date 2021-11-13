@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 })
 export class NavbarService {
 
-  auth = false;
+  auth = true;
+  notAuth = false;
   constructor() { }
 
   login(){

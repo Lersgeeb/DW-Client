@@ -9,7 +9,7 @@ import { NavbarService } from '../../../services/navbar.service';
 })
 export class NavbarComponent implements OnInit {
   
-  isAuth = true;
+  userIsAuth = true;
 
   templateStatus = {
     homeActive:false,
@@ -52,12 +52,12 @@ export class NavbarComponent implements OnInit {
 
 
  
-userIsAuth(){
-  this.navService.auth = true;
+isAuth(){
+  this.userIsAuth = this.navService.auth;
 }
 
 notIsAuth(){
-  this.navService.auth = false;
+  this.userIsAuth = this.navService.notAuth;
 }
 
 

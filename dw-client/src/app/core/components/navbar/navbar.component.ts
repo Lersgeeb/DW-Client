@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
-import { NavbarService } from '../../../services/navbar.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +9,7 @@ import { NavbarService } from '../../../services/navbar.service';
 })
 export class NavbarComponent implements OnInit {
   
-  userIsAuth = true;
+  userIsAuth = false;
 
   templateStatus = {
     homeActive:false,
@@ -22,8 +22,11 @@ export class NavbarComponent implements OnInit {
 
   
 
-  constructor(private router: Router , private navService:NavbarService) {
-
+  constructor(
+    private router: Router, 
+    private authService:AuthService
+  ) {
+    this.userIsAuth = this.authService.getAuth();
     router.events.subscribe((val: any) => {
       if (val instanceof NavigationEnd){
         this.setActiveIcon()
@@ -51,13 +54,10 @@ export class NavbarComponent implements OnInit {
   }
 
 
- 
-isAuth(){
-  this.userIsAuth = this.navService.auth;
-}
-
-notIsAuth(){
-  this.userIsAuth = this.navService.notAuth;
+handlerLogOut(){
+  this.authService.logout()
+  this.userIsAuth = this.authService.getAuth();
+  this.router.navigate(['/access/login'])
 }
 
 

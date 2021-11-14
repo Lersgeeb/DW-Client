@@ -6,7 +6,7 @@
 
 <ng-template #userAuth>
     <app-navbar-item routerLink="/cart/order" [isActive]="navStatus.cartActive" iconName="cart"></app-navbar-item>
-    <app-navbar-item iconName="logout" (click)="notIsAuth()"></app-navbar-item>
+    <app-navbar-item iconName="logout" (click)="handlerLogOut()"></app-navbar-item>
 </ng-template>
 
 <ng-template #userNotAuth>

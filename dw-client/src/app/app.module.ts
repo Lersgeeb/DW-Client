@@ -37,7 +37,8 @@ import { InvoiceStateComponent } from './core/views/invoice-state/invoice-state.
 import { OrderCartComponent } from './core/components/order-cart/order-cart.component';
 import { ProcessStepComponent } from './core/components/process-step/process-step.component';
 import { NavLinkComponent } from './core/components/nav-link/nav-link.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -78,7 +79,9 @@ import { NavLinkComponent } from './core/components/nav-link/nav-link.component'
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -26,7 +26,12 @@ export class NavbarComponent implements OnInit {
     private router: Router, 
     private authService:AuthService
   ) {
-    this.userIsAuth = this.authService.getAuth();
+    this.userIsAuth = this.authService.auth;
+
+    this.authService.authChange.subscribe( res => {
+      this.userIsAuth = res;
+    })
+
     router.events.subscribe((val: any) => {
       if (val instanceof NavigationEnd){
         this.setActiveIcon()

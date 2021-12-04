@@ -3,11 +3,16 @@
     <app-back-button route='/categories' text="Categorías" ></app-back-button>
 </div>
 <div class="bg-blue">
-    <img src="assets/icons/categories/restaurant.svg" alt="">
-    {{currentCategoryBusiness.name}}
+    <img [src]="iconSvgRoute" alt="">
+    {{currentCategory.name}}
 </div>
 <div class="view-pad business-container">
     <div class="business-options-container">
-        <app-business-option routerLink='/categories/business-details/1' *ngFor="let business of restaurants" resource={{business.resource}} name={{business.name}}></app-business-option>
+        <app-business-option 
+            *ngFor="let business of currentCategory.business"
+            [business]="business"
+            (click)="handlerChangeRoute(business._id)"
+        >
+        </app-business-option>
     </div>
 </div>

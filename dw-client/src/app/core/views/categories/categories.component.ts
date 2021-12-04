@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {CategoriesService} from 'src/app/services/categories/categories.service'
 
 @Component({
   selector: 'app-categories',
@@ -7,50 +8,36 @@ import {Router} from '@angular/router';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
+  renderCategories = false;
   categories = [
     {
-      name: 'Restaurante',
-      icon: 'restaurant'
-    },
-    {
-      name: 'Supermercado',
-      icon: 'market'
-    },
-    {
-      name: 'Farmacia',
-      icon: 'drugStore'
-    },
-    {
-      name: 'Fiesta',
-      icon: 'party'
-    },
-    {
-      name: 'Ferretería',
-      icon: 'tool'
-    },
-    {
-      name: 'Joyería',
-      icon: 'jewel'
-    },
-    {
-      name: 'Café',
-      icon: 'coffe'
-    },
-    {
-      name: 'Fitness',
-      icon: 'exercise'
-    },
-
+      _id:'',
+      name:'',
+      logo:''
+    }
   ]
 
   newRoute = '';
 
   constructor(
+    private categoriesService: CategoriesService,
     private route: Router
   ) { }
 
   ngOnInit(): void {
-    this.newRoute = `${this.route.url}/business/1`;
+    this.categoriesService.getAllCategories().subscribe( res => {
+      if(res.length > 0){
+        this.categories = res
+        this.renderCategories = true;
+      }
+    })
+
+    this.newRoute = `${this.route.url}/cat_business/1`;
+  }
+
+  handlerChangeRoute(category_id:string) {
+    this.newRoute = `${this.route.url}/cat_business/${category_id}`;
+    this.route.navigate([this.newRoute]);
   }
 
 }

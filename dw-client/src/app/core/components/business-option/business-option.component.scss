@@ -3,8 +3,11 @@
 }
 
 .business-option-container{
+    height: 90px;
+    border: 1px solid rgb(230, 230, 230);
     display: flex;
     .logo-business{
+        border-right: 1px solid rgb(230, 230, 230);
         img{
             width: 90px;
             height: 90px;
@@ -18,7 +21,7 @@
         }
         .name-container{
             position: absolute;
-            bottom: 4px;
+            bottom: 0px;
             left: 0px;
             right: 1px;
             background-color: rgba(0, 0, 0, 0.664);

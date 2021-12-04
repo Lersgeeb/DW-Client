@@ -30,6 +30,7 @@
         justify-content: center;
         object-fit: contain;
         img{
+            
             top: -4.2em;
             position: absolute;
             width: 110px;
@@ -60,6 +61,7 @@
             border-radius: 5px;
             margin-bottom: 1em;
             img{
+                border: 1px solid rgb(230, 230, 230);
                 border-radius: 5px 0 0 5px;
                 object-fit: cover;
                 height: 90px;
@@ -78,20 +80,18 @@
                 }
                 .btn-add{
                     display: flex;
-                    align-items: center;
+                    align-items: flex-end;
                     .add-button{
-                        height: 1.5em;
-                        width: 1.5em;
+                        height: 1.7em;
+                        width: 1.7em;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         border-radius: 5px;
                         color: white;
-                        background: $gray-lighter;
+                        background: $main-color;
                         border: none;
-                        font-size: 3em;
-                        
-                        
+                        font-size: 1.5em;          
                     }
                 }
             }

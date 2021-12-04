@@ -7,17 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BusinessOptionComponent implements OnInit {
 
-  @Input () resource: string = '';
-  @Input () name: string = '';
-  routeLogo = '';
-  routeBgImg = '';
+  @Input () business: any = {
+    banner: '',
+    logo: '',
+  };
+  
+
   
 
   constructor() { }
 
   ngOnInit(): void {
-    this.routeLogo = `assets/images/business/${this.resource}-logo.png`;
-    this.routeBgImg = `assets/images/business/${this.resource}.png`;
+    
   }
 
 }

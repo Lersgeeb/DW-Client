@@ -1,16 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
-
-interface Business {
-  name: string;
-  resource: string;
-}
-
-interface CategoryBusiness {
-  name: string;
-  list: Business [];
-}
+import { ActivatedRoute, Router } from '@angular/router';
+import {CategoriesService} from 'src/app/services/categories/categories.service'
 
 @Component({
   selector: 'app-business',
@@ -18,7 +8,7 @@ interface CategoryBusiness {
   styleUrls: ['./business.component.scss']
 })
 export class BusinessComponent implements OnInit {
-  restaurants: Business [] =  [
+  restaurants: any [] =  [
     {
       name:'Pizza Hut',
       resource:'pizza-hut'
@@ -33,26 +23,46 @@ export class BusinessComponent implements OnInit {
     },
   ]
 
-  listCategoryBusiness: CategoryBusiness[] = [
+  listCategoryBusiness: any[] = [
     {
       name: 'Restaurantes',
       list: this.restaurants
     },
   ]
 
-  currentCategoryBusiness: CategoryBusiness = this.listCategoryBusiness[0]
-
-
+  currentCategory: any = {}
   category: string | null = null;
 
+  get iconSvgRoute(){
+    if(this.currentCategory.logo){
+      return `assets/icons/categories/${this.currentCategory.logo}.svg`
+    }
+    return ''
+  } 
+  newRoute = '';
+
   constructor(
-    private route: ActivatedRoute
+    private categoriesService: CategoriesService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.category = params.get('category');
+    this.activatedRoute.paramMap.subscribe((params) => {
+      this.category = params.get('category_id');
+      if(typeof this.category === 'string'){
+        this.categoriesService.getAllBusinessOfCategory(this.category).subscribe(
+          res => {
+            this.currentCategory = res.data
+          }
+        )
+      }
     })
   }
+  handlerChangeRoute(business_id:string) {
+    this.newRoute = `${this.router.url}/business-details/${business_id}`;
+    this.router.navigate([this.newRoute]);
+  }
+  
 
 }

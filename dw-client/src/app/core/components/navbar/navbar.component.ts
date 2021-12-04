@@ -45,7 +45,6 @@ export class NavbarComponent implements OnInit {
   }
 
   setActiveIcon(): void{
-    console.log(this.router.url)  
     this.navStatus = Object.create(this.templateStatus);
     let route = this.router.url;
     if(route == "/")

@@ -27,11 +27,11 @@ const routes: Routes = [
         component: CategoriesComponent
       },
       {
-        path: 'business/:category',
-        component: BusinessComponent
+        path: 'cat_business/:category_id',
+        component: BusinessComponent,
       },
       {
-        path: 'business-details/:id',
+        path: 'cat_business/:category_id/business-details/:business_id',
         component: BusinessProductsComponent
       },
     ]

@@ -1,10 +1,12 @@
 <div class="order-component">
     
-    <div class="item-list">
+    <div *ngIf="renderProductBoolean" class="item-list">
     
-        <app-order-cart></app-order-cart>
-        <app-order-cart></app-order-cart>
-        <app-order-cart></app-order-cart>
+        <app-order-cart 
+            *ngFor="let product of productsOrder"
+            [product] = "product"
+        ></app-order-cart>
+        
             
     </div>
     

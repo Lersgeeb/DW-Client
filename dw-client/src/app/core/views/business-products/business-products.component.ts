@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
+import { AuthService } from 'src/app/services/auth.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {AmountInputModalComponent} from 'src/app/core/modal/amount-input-modal/amount-input-modal.component'
+
 
 @Component({
   selector: 'app-business-products',
@@ -14,10 +18,13 @@ export class BusinessProductsComponent implements OnInit {
   business_id: (string | null) = "";
   business:any = {};
   showBusiness = false;
+  amount= 0;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private authService: AuthService,
+    public dialog: MatDialog
   ) { }
 
  
@@ -39,6 +46,23 @@ export class BusinessProductsComponent implements OnInit {
         )
       }
     })
+  }
+
+  openDialog(product_id:string): void {
+    console.log(product_id)
+    const dialogRef = this.dialog.open(AmountInputModalComponent, {
+      width: '250px',
+      data: {amount: this.amount},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result)
+      this.amount = result
+      if(this.amount > 0){
+        this.authService.addProductToCart(product_id, this.amount)
+      }
+    });
   }
 
   get backButton(){

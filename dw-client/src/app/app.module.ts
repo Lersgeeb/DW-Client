@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from "@angular/material/dialog";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +40,8 @@ import { ProcessStepComponent } from './core/components/process-step/process-ste
 import { NavLinkComponent } from './core/components/nav-link/nav-link.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AmountInputModalComponent } from './core/modal/amount-input-modal/amount-input-modal.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -69,7 +72,8 @@ import { HttpClientModule } from '@angular/common/http';
     InvoiceStateComponent,
     OrderCartComponent,
     ProcessStepComponent,
-    NavLinkComponent
+    NavLinkComponent,
+    AmountInputModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,9 +85,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatTableModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

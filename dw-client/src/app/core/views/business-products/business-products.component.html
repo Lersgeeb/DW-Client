@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="btn-add">
-                        <div class="add-button">
+                        <div  (click)="openDialog(product._id)" class="add-button">
                             <fa-icon [icon]="faPlus"></fa-icon>
                         </div>
                     </div>
@@ -46,3 +46,4 @@
         </div>
     </div>
 </ng-template>
+

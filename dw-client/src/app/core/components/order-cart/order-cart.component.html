@@ -1,13 +1,13 @@
 <div class="item">
-    <img src="assets/images/products/pizza.png" alt="">
+    <img [src]="product.info.image" alt="">
     <div class="item-desc">
         <div class="desc">
             <div class="product-info">
                 <div class="name-product">
-                    Pizza mixta
+                    {{product.info.name}}
                 </div>
                 <div class="business-name">
-                    Pizza Hut
+                    {{product.business_name}}
                 </div>
             </div>
             <div class="order-info">
@@ -15,7 +15,7 @@
                     x2
                 </div>
                 <div class="price">
-                    L200.00
+                    L{{product.info.price}}
                 </div>
             </div>
         </div>

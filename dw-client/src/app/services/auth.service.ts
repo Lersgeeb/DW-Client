@@ -5,18 +5,11 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { UserSingUp } from 'src/app/core/interfaces/user-sing-up';
 import { UserLogin } from 'src/app/core/interfaces/user-login';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   url = `http://localhost:8888/customers`
-  authUser:UserSingUp = {
-    fullname: '',
-    email: '',
-    password: ''
-  }
   auth= true;
   authChange: Subject<boolean> = new Subject<boolean>();
 
@@ -37,6 +30,7 @@ export class AuthService {
     $SignUpObs.subscribe( res => {
       if(res.status==200){
         localStorage.setItem('token', res.body.token);
+        localStorage.setItem('user_id', res.body.resp._id);
         this.authChange.next(true)
       }
     })
@@ -48,14 +42,37 @@ export class AuthService {
     $loginObs.subscribe(res => {
       if(res.status==200){
         localStorage.setItem('token', res.body.token);
+        localStorage.setItem('user_id', res.body.resp._id);
         this.authChange.next(true)
       }
     })
     return $loginObs;
   }
+
+  addProductToCart(product_id:string, amount:number): Observable<any>{
+    const userId = localStorage.getItem('user_id');
+    const body = {
+      product_id: product_id,
+      amount: amount
+    }
+    let $loginObs =  this.httpClient.put<any>(`${this.url}/${userId}/add-product`, body, { observe: 'response' })    
+    $loginObs.subscribe(res => {
+      if(res.status==200){
+        console.log('Agregada al carrito')
+        console.log(res.body)
+      }
+    })
+    return $loginObs;
+  }
+
+  getProductsOfCart(): Observable<any>{
+    const userId = localStorage.getItem('user_id');
+    return this.httpClient.get<any>(`${this.url}/cart/${userId}`, { observe: 'response' })    
+  }
   
   logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('user_id');
     this.authChange.next(false)
   }
 }

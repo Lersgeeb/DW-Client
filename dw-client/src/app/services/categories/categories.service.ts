@@ -35,4 +35,8 @@ export class CategoriesService {
   getAllProductsOfBusiness( categoryId:string, businessId:string ): Observable<any>{
     return this.httpClient.get<any>(`${this.url}/${categoryId}/business/${businessId}`)
   }
+
+  getBusinessInfo(businessId:string): Observable<any>{
+    return this.httpClient.get<any>(`${this.url}/business/${businessId}`)
+  }
 }

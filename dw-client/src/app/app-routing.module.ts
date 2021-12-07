@@ -55,7 +55,7 @@ const routes: Routes = [
     component: CommercialInvoiceComponent
   },
   {
-    path: 'state-invoice',
+    path: 'state-invoice/:order_id',
     component: InvoiceStateComponent
   },
   {

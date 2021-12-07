@@ -35,7 +35,8 @@
                             L{{product.price}}
                         </div>
                     </div>
-                    <div class="btn-add">
+                    
+                    <div *ngIf="isAuth" class="btn-add">
                         <div  (click)="openDialog(product._id)" class="add-button">
                             <fa-icon [icon]="faPlus"></fa-icon>
                         </div>

@@ -17,7 +17,6 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.authService.getProductsOfCart().subscribe(
       res => {
-        console.log(res.body) 
         this.productsOrder = res.body
       }
     )
@@ -26,5 +25,4 @@ export class OrderComponent implements OnInit {
   get renderProductBoolean(){
     return (this.productsOrder.length > 0)
   }
-
 }

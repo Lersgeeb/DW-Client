@@ -10,9 +10,9 @@
     <th>Precio</th>
   </tr>
     <tr *ngFor="let order of orders">
-      <td class="subs text-color">{{order.order_name}}</td>
+      <td class="subs text-color">{{order.info.name}}</td>
       <td class="text-color">{{order.amount}}</td>
-      <td class="text-color">L.{{order.price}}</td>
+      <td class="text-color">L.{{order.info.price}}</td>
     </tr>
     <hr>
     <tr>

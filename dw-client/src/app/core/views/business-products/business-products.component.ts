@@ -19,6 +19,7 @@ export class BusinessProductsComponent implements OnInit {
   business:any = {};
   showBusiness = false;
   amount= 0;
+  isAuth = false
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -44,6 +45,8 @@ export class BusinessProductsComponent implements OnInit {
             console.log(res)
           }
         )
+
+        this.isAuth = this.authService.auth;
       }
     })
   }

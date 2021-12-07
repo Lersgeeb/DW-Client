@@ -4,21 +4,29 @@ import { catchError, retry } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { UserSingUp } from 'src/app/core/interfaces/user-sing-up';
 import { UserLogin } from 'src/app/core/interfaces/user-login';
+import { OrdersService } from './orders/orders.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   url = `http://localhost:8888/customers`
-  auth= true;
+  auth= false;
   authChange: Subject<boolean> = new Subject<boolean>();
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private ordersService: OrdersService
   ) { 
     this.authChange.subscribe( (value) => {
       this.auth = value
     });
+    let token = localStorage.getItem('token');
+    if(token){
+      this.authChange.next(true)
+    }
+
+
   }
 
   getAuth(){
@@ -67,7 +75,22 @@ export class AuthService {
 
   getProductsOfCart(): Observable<any>{
     const userId = localStorage.getItem('user_id');
-    return this.httpClient.get<any>(`${this.url}/cart/${userId}`, { observe: 'response' })    
+    let $cartProductsObs =  this.httpClient.get<any>(`${this.url}/cart/${userId}`, { observe: 'response' })    
+    $cartProductsObs.subscribe(
+      res => {
+        if(res.body.length > 0){
+        
+          let order = {
+            business_id: res.body[0].business_id,
+            client_id: userId,
+            order_products: res.body
+          }
+          this.ordersService.setCurrentCart(order)
+        }
+      }
+    )
+    
+    return $cartProductsObs;
   }
   
   logout(){

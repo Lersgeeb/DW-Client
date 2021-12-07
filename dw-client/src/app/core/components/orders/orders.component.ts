@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdersService } from 'src/app/services/orders/orders.service';
+import { Router } from '@angular/router';
 export interface Orders {
   business: string;
   id: number;
@@ -13,6 +15,14 @@ const MY_ORDERS: Orders[] = [
  
 ];
 
+
+const delivery_states = [
+  'Tomada',
+  'En camino',
+  'En origen',
+  'En destino'
+]
+
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -20,12 +30,34 @@ const MY_ORDERS: Orders[] = [
 })
 export class OrdersComponent implements OnInit {
 
-   
+  orders:any = []   
   displayedColumns: string[] = ['position', 'name', 'state','weight'];
-  dataSource = MY_ORDERS;
-  constructor() { }
+  dataSource = [];
+  constructor(
+    private ordersService: OrdersService,
+    private router: Router, 
+  ) { 
+    this.ordersService.ordersDetailedChange.subscribe( res => {
+      this.dataSource = res;
+      console.log(this.dataSource)
+      
+    })
+    this.ordersService.getOrdersOfUser()
+  }
 
   ngOnInit(): void {
+    
+   
+  }
+
+  translateState(state:string){
+    if(state === '') return 'Pendiente'
+    else if(state === delivery_states[3]) return 'Entregado'
+    else return 'En Proceso' 
+  }
+
+  showInvoice(order_id: string){
+    this.router.navigate([`/state-invoice/${order_id}`]);
   }
 
 }

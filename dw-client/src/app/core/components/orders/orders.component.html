@@ -6,24 +6,24 @@
     <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef> # </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <td mat-cell *matCellDef="let element"> - </td>
     </ng-container>
   
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Empresa </th>
-      <td mat-cell *matCellDef="let element"> {{element.business}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.business_name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="state">
         <th mat-header-cell *matHeaderCellDef> Estado </th>
-        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+        <td mat-cell *matCellDef="let element"> {{translateState(element.order.delivery_state)}} </td>
       </ng-container>
   
     <!-- Weight Column -->
     <ng-container matColumnDef="weight">
       <th mat-header-cell *matHeaderCellDef> Fact. </th>
-      <td mat-cell *matCellDef="let element"> <img src="{{element.invoice_icon}}" alt="" routerLink="/state-invoice"> </td>
+      <td mat-cell *matCellDef="let element"> <img src="assets/icons/commercial-invoice/invoice-icon.svg" alt="" (click)="showInvoice(element.order._id)"> </td>
     </ng-container>
   
     

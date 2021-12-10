@@ -73,13 +73,17 @@ export class AuthService {
     return $loginObs;
   }
 
+  removeProductFromCart(product_id:string): Observable<any>{
+    const userId = localStorage.getItem('user_id');
+    return this.httpClient.put<any>(`${this.url}/${userId}/product/${product_id}/delete`, { observe: 'response' })    
+  }
+
   getProductsOfCart(): Observable<any>{
     const userId = localStorage.getItem('user_id');
     let $cartProductsObs =  this.httpClient.get<any>(`${this.url}/cart/${userId}`, { observe: 'response' })    
     $cartProductsObs.subscribe(
       res => {
         if(res.body.length > 0){
-        
           let order = {
             business_id: res.body[0].business_id,
             client_id: userId,

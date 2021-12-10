@@ -3,6 +3,7 @@
     <div *ngIf="renderProductBoolean" class="item-list">
     
         <app-order-cart 
+            (needUpdate)="updateCart()"
             *ngFor="let product of productsOrder"
             [product]="product"
         ></app-order-cart>

@@ -42,6 +42,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AmountInputModalComponent } from './core/modal/amount-input-modal/amount-input-modal.component';
 import { FormsModule } from '@angular/forms';
+import { MapComponent } from './core/components/map/map.component';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { FormsModule } from '@angular/forms';
     ProcessStepComponent,
     NavLinkComponent,
     AmountInputModalComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

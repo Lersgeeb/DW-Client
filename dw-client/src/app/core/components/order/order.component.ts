@@ -25,4 +25,12 @@ export class OrderComponent implements OnInit {
   get renderProductBoolean(){
     return (this.productsOrder.length > 0)
   }
+
+  updateCart(){
+    this.authService.getProductsOfCart().subscribe(
+      res => {
+        this.productsOrder = res.body
+      }
+    )
+  }
 }
